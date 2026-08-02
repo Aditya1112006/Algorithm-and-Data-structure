@@ -59,3 +59,13 @@ Amount of memory space taken by an algorithm as a function of input size ($n$).
 * **Auxiliary Space**: Extra space or temporary space used by the algorithm.
 * **Total Space Complexity**: Auxiliary space + Input space.
 * Example: Declaring a single variable takes $O(1)$ space, while creating an array of size $n$ takes $O(n)$ space.
+
+---
+
+### Common Time complexity
+* O(1) :- Also known as Constant Time complexity.
+* O(logn) :- Also known as Logarithmic Time complexity
+* O(n) :- Also known as Linear Time complexity.
+* O(n^2) :- Also known as Qudratic Time complexity.
+* O(2^n) :- Also known as exponential Time complexity.
+
