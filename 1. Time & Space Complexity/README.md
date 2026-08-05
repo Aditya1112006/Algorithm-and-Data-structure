@@ -53,6 +53,56 @@ For example: Accessing an element inside an array at a specific index (`arr[2]`)
 
 ---
 
+## Master Theorem for Recurrences
+
+The **Master Theorem** provides a direct way to solve recurrence relations of the form used in divide-and-conquer algorithms:
+
+$$T(n) = a T\left(\frac{n}{b}\right) + f(n)$$
+
+Where:
+* $n$ = size of the problem.
+* $a \ge 1$ = number of subproblems in the recursion.
+* $b > 1$ = factor by which the subproblem size is divided.
+* $f(n)$ = cost of work done outside recursive calls (dividing and combining step).
+
+### Formula / Cases
+
+We compare $f(n)$ with $n^{\log_b a}$:
+
+1. **Case 1: $f(n) = O(n^{\log_b a - \epsilon})$** (for some constant $\epsilon > 0$)
+   * **Condition**: Work done at leaves dominates.
+   * **Result**: $T(n) = \Theta(n^{\log_b a})$
+
+2. **Case 2: $f(n) = \Theta(n^{\log_b a} \cdot \log^k n)$** (for $k \ge 0$)
+   * **Condition**: Work is evenly distributed across levels.
+   * **Result**: $T(n) = \Theta(n^{\log_b a} \cdot \log^{k+1} n)$
+   * *(Note: When $k = 0$, $f(n) = \Theta(n^{\log_b a})$, so $T(n) = \Theta(n^{\log_b a} \log n)$)*
+
+3. **Case 3: $f(n) = \Omega(n^{\log_b a + \epsilon})$** (for some constant $\epsilon > 0$)
+   * **Condition**: Work done at root dominates, provided regularity condition holds ($a f(n/b) \le c f(n)$ for $c < 1$).
+   * **Result**: $T(n) = \Theta(f(n))$
+
+---
+
+### Examples
+
+* **Merge Sort**: $T(n) = 2T(n/2) + \Theta(n)$
+  * $a = 2, b = 2, f(n) = n$
+  * $n^{\log_b a} = n^{\log_2 2} = n^1 = n$
+  * Since $f(n) = \Theta(n)$, it falls in **Case 2** ($k=0$) $\rightarrow \mathbf{T(n) = \Theta(n \log n)}$
+
+* **Binary Search**: $T(n) = T(n/2) + \Theta(1)$
+  * $a = 1, b = 2, f(n) = 1$
+  * $n^{\log_b a} = n^{\log_2 1} = n^0 = 1$
+  * Since $f(n) = \Theta(1)$, it falls in **Case 2** ($k=0$) $\rightarrow \mathbf{T(n) = \Theta(\log n)}$
+
+* **Strassen's Matrix Multiplication**: $T(n) = 7T(n/2) + \Theta(n^2)$
+  * $a = 7, b = 2, f(n) = n^2$
+  * $n^{\log_b a} = n^{\log_2 7} \approx n^{2.807}$
+  * Since $f(n) = O(n^{2.807 - \epsilon})$, it falls in **Case 1** $\rightarrow \mathbf{T(n) = \Theta(n^{\log_2 7})}$
+
+---
+
 ## Space Complexity
 Amount of memory space taken by an algorithm as a function of input size ($n$).
 
