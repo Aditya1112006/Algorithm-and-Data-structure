@@ -79,3 +79,20 @@ Reverses the sequence of elements in an array.
 | **Binary Search** | $O(\log n)$ | $O(1)$ | Divide & Conquer (Requires Sorted Array) |
 | **Array Reversal (Aux Array)** | $O(n)$ | $O(n)$ | Out-of-place Extra Array |
 | **Array Reversal (Two Pointer)**| $O(n)$ | $O(1)$ | In-place Swapping |
+
+
+# Array Pointer
+An array name behaves like a pointer to its first element in most expressions.
+
+## Pointer Arithematic
+* **Increment & Decrement Operator**
+  - ptr++ or ++ptr // It will move the ptr value according to data type not valuer stored under it
+  - ptr-- or --ptr
+* **Addition and subtraction of constants**
+  - ptr+3 // It will move the ptr value according to data type not valuer stored under it
+  - ptr-3
+* **Addition and subtraction of pointers**
+  - ptr1 + ptr2 // This is invalid and will output error
+  - ptr1 - ptr2 // This can happen but only for the condition where both pointer are of same data type
+* **Comparison**
+  - ( ==, <, <=, >, >=) // Output value in true or false (0 or 1)
