@@ -36,3 +36,5 @@ int main(){
     trap(height, n);
     return 0;
 }
+
+// Leetcode quesion = 42
