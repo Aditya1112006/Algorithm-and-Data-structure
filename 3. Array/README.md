@@ -96,3 +96,11 @@ An array name behaves like a pointer to its first element in most expressions.
   - ptr1 - ptr2 // This can happen but only for the condition where both pointer are of same data type
 * **Comparison**
   - ( ==, <, <=, >, >=) // Output value in true or false (0 or 1)
+
+---
+
+### Leetcode Question solved
+* 33 :- Rotated Sorted array
+* 42 :- Trapping rainwater
+* 121 :- Buy and sell stock
+* 217 :- Contain Duplicates
