@@ -4,7 +4,7 @@ using namespace std;
 int searchMatrix(int mat[][4], int n, int m){
     int key = 33;
     for(int i = 0;i<=n;i++){
-        for(int j = 0;j<=n;j++){
+        for(int j = 0;j<=m;j++){
             if(mat[i][j] == key){
                 cout<<"Element found = "<< mat[i][j]<<endl;
             }
