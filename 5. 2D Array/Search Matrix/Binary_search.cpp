@@ -1,28 +1,30 @@
 #include <iostream>
 using namespace std;
 
-bool searchMatrix(int mat[][4], int n, int m, int key){
-    int row = 0;
-    int col = m - 1;
+int searchMatrix(int mat[][4], int n, int m, int key) {
 
-    while (row < n && col >= 0) {
+    for (int i = 0; i < n; i++) {
 
-        if (mat[row][col] == key){
-            cout << "Element found at (" << row << ", " << col << ")" << endl;
-            return true;
-        }
+        int start = 0;
+        int end = m - 1;
 
-        else if (mat[row][col] > key){
-            col--;
-        }
+        while (start <= end) {
 
-        else{
-            row++;
+            int mid = start + (end - start) / 2;
+
+            if (mat[i][mid] == key) {
+                return mat[i][mid];
+            }
+            else if (key < mat[i][mid]) {
+                end = mid - 1;
+            }
+            else {
+                start = mid + 1;
+            }
         }
     }
 
-    cout << "Element not found" << endl;
-    return false;
+    return -1;
 }
 
 int main() {
@@ -34,7 +36,14 @@ int main() {
         {32, 33, 39, 50}
     };
 
-    searchMatrix(matrix, 4, 4, 33);
+    int result = searchMatrix(matrix, 4, 4, 33);
+
+    if (result != -1) {
+        cout << "Element found = " << result;
+    }
+    else {
+        cout << "Element not found";
+    }
 
     return 0;
 }
