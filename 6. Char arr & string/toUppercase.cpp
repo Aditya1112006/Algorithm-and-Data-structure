@@ -8,7 +8,7 @@ int toUppercase(char *arr, int n){
         if(arr[i]>= 'A' && arr[i]<='Z'){
             continue;
         }else{
-            arr[i] = ch -('a'-'A');
+            arr[i] = ch - 'a' + 'A' ;
         }
     }
 }
