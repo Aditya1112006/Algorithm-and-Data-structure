@@ -2,7 +2,7 @@
 
 Welcome to my **DSA Journey** repository!
 
-This repository is dedicated to documenting my journey of learning **Data Structures and Algorithms (DSA)** from scratch. It serves as a personal knowledge base where I'll regularly add notes, code implementations, and solutions as I continue learning.
+This repository is dedicated to documenting my journey of learning **Data Structures and Algorithms (DSA)** from scratch. It serves as a personal knowledge base where I'll regularly add notes through README, code implementations, and solutions as I continue learning.
 
 ## 🎯 Objective
 
